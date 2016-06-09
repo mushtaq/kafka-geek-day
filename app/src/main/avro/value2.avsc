@@ -1,0 +1,15 @@
+{
+  "namespace": "com.tw",
+  "type": "record",
+  "name": "Value2",
+  "fields": [
+    {
+      "name": "part1",
+      "type": "int"
+    },
+    {
+      "name": "part2",
+      "type": "string"
+    }
+  ]
+}

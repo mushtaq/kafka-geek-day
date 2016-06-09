@@ -1,0 +1,15 @@
+{
+  "namespace": "com.tw",
+  "type": "record",
+  "name": "Key",
+  "fields": [
+    {
+      "name": "part1",
+      "type": "int"
+    },
+    {
+      "name": "part2",
+      "type": "string"
+    }
+  ]
+}
