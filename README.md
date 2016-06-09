@@ -9,4 +9,5 @@ ThoughtWorks GeekDay on Kafka
 - Open Idea and install latest Scala plugin
 - From Idea, select open project and load the cloned repo
     - Wait for a long long time till Idea finishes the src-file downloads and indexing
+- Download and unzip the [Confluent Platform 3.0.0](http://packages.confluent.io/archive/3.0/confluent-3.0.0-2.11.tar.gz)
 - You are ready to go!
