@@ -1,6 +1,6 @@
 package com.tw.geekday.framework
 
-import com.tw.geekday.cep.{Cep, Pipeline}
+import com.tw.geekday.cep.{Cep, Pipeline, VisitsCep}
 import com.typesafe.config.ConfigFactory
 import org.apache.kafka.streams.KafkaStreams
 import org.apache.kafka.streams.kstream.KStreamBuilder
@@ -19,6 +19,7 @@ abstract class AbstractAssembly(env: String, serviceName: String) {
   lazy val streams = new KafkaStreams(builder, streamsConfiguration)
 
   lazy val cep = new Cep
+  lazy val visitsCep = new VisitsCep
 
   lazy val pipeline = new Pipeline(cep, builder, streams)
 }

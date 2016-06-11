@@ -12,9 +12,9 @@ class Pipeline(
   def run() = {
 
     cep.process(
-      builder.stream(Topics.Topic1),
+      builder.stream(Topics.Visits),
       builder.table(Topics.Topic2)
-    ).to(Topics.Topic3)
+    ).to(Topics.Aggregates)
 
     streams.start()
   }

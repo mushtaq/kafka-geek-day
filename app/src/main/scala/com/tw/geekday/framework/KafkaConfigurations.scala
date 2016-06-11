@@ -2,6 +2,7 @@ package com.tw.geekday.framework
 
 import java.util.Properties
 
+import com.tw.geekday.utils.CustomTimeExtractor
 import io.confluent.examples.streams.utils.SpecificAvroSerde
 import io.confluent.kafka.serializers.{AbstractKafkaAvroSerDeConfig, KafkaAvroDeserializer, KafkaAvroSerializer}
 import org.apache.kafka.clients.consumer.ConsumerConfig
@@ -17,8 +18,9 @@ class KafkaConfigurations(clusterParams: ConnectionParams, appSettings: AppSetti
     p.put(StreamsConfig.ZOOKEEPER_CONNECT_CONFIG, clusterParams.zookeeperServers)
     p.put(StreamsConfig.KEY_SERDE_CLASS_CONFIG, classOf[SpecificAvroSerde[_]])
     p.put(StreamsConfig.VALUE_SERDE_CLASS_CONFIG, classOf[SpecificAvroSerde[_]])
-    p.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, clusterParams.schemaRegistryUrl)
     p.put(StreamsConfig.STATE_DIR_CONFIG, appSettings.KafkaStreamStateDir)
+    p.put(StreamsConfig.TIMESTAMP_EXTRACTOR_CLASS_CONFIG, classOf[CustomTimeExtractor].getName)
+    p.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, clusterParams.schemaRegistryUrl)
     p
   }
 

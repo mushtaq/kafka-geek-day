@@ -1,7 +1,7 @@
 package com.tw.geekday.utils
 
 object Topics {
-  val Topic1 = "topic1"
+  val Visits = "visits"
   val Topic2 = "topic2"
-  val Topic3 = "topic3"
+  val Aggregates = "aggregates"
 }
